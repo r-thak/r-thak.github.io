@@ -1,0 +1,9 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "workspaceFolder": "/workspaces/r-thak-github-io",
+    "features": {
+        "ghcr.io/devcontainers/features/ruby:1": {},
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/devcontainers/features/common-utils:2": {},
+    }
+}
