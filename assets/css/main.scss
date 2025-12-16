@@ -66,13 +66,12 @@ body {
   min-height: 100vh;
 }
 
-// Home landing page - exact height, no scroll
 .home-landing {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 85vh;
   max-height: 100vh;
   overflow: hidden;
   padding: 0 2rem 0;
