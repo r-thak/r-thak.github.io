@@ -4,15 +4,8 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+<div class="about-content-simple">
+  <p>Hi, I'm Rohan Thakkar! I study Computer Science and Philosophy at the University of Illinois Urbana-Champaign, though I previously attended UW-Madison and miss it dearly. My interests include platform/hardware-aware performance optimizations, applications of malware development in the context of gaming, improving education through well-designed educational policy, and AI safety research.</p>
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+  <a href="{{ '/experience' | relative_url }}" class="more-btn">More</a>
+</div>

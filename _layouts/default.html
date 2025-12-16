@@ -1,16 +1,35 @@
----
-layout: home-simple
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+  {% unless page.layout == 'home-simple' %}
+  <header class="site-header">
+    <div class="wrapper">
+      <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <nav class="site-nav">
+        <a class="page-link" href="{{ '/about' | relative_url }}">About</a>
+        <a class="page-link" href="{{ '/projects' | relative_url }}">Projects</a>
+        <a class="page-link" href="{{ '/blog' | relative_url }}">Blog</a>
+        <button class="theme-toggle" id="theme-toggle"></button>
+      </nav>
+    </div>
+  </header>
+  {% endunless %}
 
-<div class="home-landing">
-  <nav class="home-nav-landing">
-    <a href="{{ '/about' | relative_url }}" class="home-link-landing">About</a>
-    <a href="{{ '/projects' | relative_url }}" class="home-link-landing">Projects</a>
-    <a href="{{ '/blog' | relative_url }}" class="home-link-landing">Blog</a>
-  </nav>
+  <main class="site-content">
+    {{ content }}
+  </main>
 
-  <footer class="home-footer-landing">
-    <div class="contact-links-small">
+  {% unless page.layout == 'home-simple' %}
+  <footer class="site-footer">
+    <div class="wrapper">
       <a href="mailto:mail@rthak.com">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         mail@rthak.com
@@ -35,6 +54,47 @@ layout: home-simple
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"/></svg>
         rt552
       </a>
+      <span>•</span>
+      <span>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</span>
     </div>
   </footer>
-</div>
+  {% endunless %}
+
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+      const htmlElement = document.documentElement;
+
+      // Set default theme to light
+      const currentTheme = localStorage.getItem('theme') || 'light';
+      htmlElement.setAttribute('data-theme', currentTheme);
+      updateToggleButton(currentTheme);
+
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateToggleButton(newTheme);
+      });
+
+      function updateToggleButton(theme) {
+        if (theme === 'dark') {
+          themeToggle.style.backgroundImage = 'url({{ "/assets/msun.webp" | relative_url }})';
+          themeToggle.style.filter = 'blur(1px)';
+        } else {
+          themeToggle.style.backgroundImage = 'url({{ "/assets/mmoon.webp" | relative_url }})';
+          themeToggle.style.filter = 'blur(0.6px)';
+        }
+      }
+    } else {
+      // For home page without header, still set theme
+      const htmlElement = document.documentElement;
+      const currentTheme = localStorage.getItem('theme') || 'light';
+      htmlElement.setAttribute('data-theme', currentTheme);
+    }
+  </script>
+</body>
+</html>
