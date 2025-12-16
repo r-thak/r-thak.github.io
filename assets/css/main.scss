@@ -75,12 +75,12 @@ body {
   height: 100vh;
   max-height: 100vh;
   overflow: hidden;
-  padding: 1rem 2rem 0;
+  padding: 0.5rem 2rem 0;
 
   .home-nav-landing {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
     align-items: center;
     flex: 1;
     justify-content: center;
@@ -99,7 +99,7 @@ body {
   }
 
   .home-footer-landing {
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
 
     .contact-links-small {
       display: flex;
