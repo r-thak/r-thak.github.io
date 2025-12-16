@@ -12,10 +12,15 @@ layout: home-simple
 
   <footer class="home-footer-landing">
     <div class="contact-links-small">
-      <span>📧 mail@rthak.com</span>
-      <span>🔗 <a href="https://github.com/r-thak" target="_blank">github.com/r-thak</a></span>
-      <span>📷 <a href="https://instagram.com/rohanthakkar_" target="_blank">@rohanthakkar_</a></span>
-      <span>💬 <a href="https://discord.com/users/rt552" target="_blank">@rt552</a></span>
+      <span>✉️ mail@rthak.com</span>
+      <span>•</span>
+      <span><a href="https://linkedin.com/in/rthak" target="_blank">💼 LinkedIn</a></span>
+      <span>•</span>
+      <span>👨‍💻 GitHub</span>
+      <span>•</span>
+      <span><a href="https://instagram.com/rohanthakkar_" target="_blank">📸 @rohanthakkar_</a></span>
+      <span>•</span>
+      <span><a href="https://discord.com/users/rt552" target="_blank">💬 @rt552</a></span>
     </div>
   </footer>
 </div>

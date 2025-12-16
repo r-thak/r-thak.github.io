@@ -4,70 +4,158 @@ title: Resume
 permalink: /resume/
 ---
 
-<div class="resume-download">
-  <a href="{{ '/assets/Rohan-Thakkar-Resume.pdf' | relative_url }}" target="_blank" class="download-btn">Download PDF Resume</a>
+<div class="resume-header-with-download">
+  <div class="resume-name-contact">
+    <h2 class="resume-name">Rohan Thakkar</h2>
+    <div class="resume-contact-info">
+      rohan@rthak.com | 224-424-3122 | Chicago, IL, 60612<br>
+      <a href="http://rthak.com">rthak.com</a> | <a href="https://linkedin.com/in/rthak">linkedin.com/in/rthak</a> | <a href="https://github.com/r-thak">github.com/r-thak</a>
+    </div>
+  </div>
+  <a href="{{ '/assets/Rohan-Thakkar-Resume.pdf' | relative_url }}" target="_blank" class="download-btn-inline">Download PDF</a>
 </div>
 
-<div class="resume-content">
-
-<div class="resume-header">
-  <h1>Rohan Thakkar</h1>
-  <div class="resume-contact">
-    <span>rohan@rthak.com | 224-424-3122 | Chicago, IL, 60612</span><br>
-    <span><a href="http://rthak.com">rthak.com</a> | <a href="https://linkedin.com/in/rthak">linkedin.com/in/rthak</a> | <a href="https://github.com/r-thak">github.com/r-thak</a></span>
+<div class="resume-section">
+  <h3>EDUCATION</h3>
+  <div class="resume-entry">
+    <div class="entry-header">
+      <span class="entry-title">University of Illinois Urbana-Champaign</span>
+      <span class="entry-date">May 2028</span>
+    </div>
+    <div class="entry-subtitle">
+      <span>Bachelor of Science, Computer Science and Philosophy</span>
+      <span class="entry-gpa">GPA: 3.84</span>
+    </div>
+    <div class="entry-details">
+      Coursework: Intro to Algorithms, Intro to Big Data Systems, Computer Architecture
+    </div>
   </div>
 </div>
 
-## EDUCATION
+<div class="resume-section">
+  <h3>WORK EXPERIENCE</h3>
 
-**University of Illinois Urbana-Champaign** <span class="date-right">May 2028</span>
-*Bachelor of Science, Computer Science and Philosophy* <span class="gpa-right">GPA: 3.84</span>
-Coursework: Intro to Algorithms, Intro to Big Data Systems, Computer Architecture
+  <div class="resume-entry">
+    <div class="entry-header">
+      <span class="entry-title">Peer Tutor</span>
+      <span class="entry-date">Sep 2025 – Dec 2025</span>
+    </div>
+    <div class="entry-subtitle">
+      <span class="entry-company">University of Wisconsin</span>
+      <span class="entry-location">Madison, WI</span>
+    </div>
+    <ul class="entry-bullets">
+      <li>Provided in-class and office hours support for ECE 252 – Intro Computer Engineering</li>
+    </ul>
+  </div>
 
-## WORK EXPERIENCE
+  <div class="resume-entry">
+    <div class="entry-header">
+      <span class="entry-title">Technical Support & Development</span>
+      <span class="entry-date">May 2025 – Sep 2025</span>
+    </div>
+    <div class="entry-subtitle">
+      <span class="entry-company">PAWS Chicago</span>
+      <span class="entry-location">Chicago, IL</span>
+    </div>
+    <ul class="entry-bullets">
+      <li>Improved knowledge base and technical documentation to create long-lasting impacts & solutions</li>
+      <li>Implemented LLM-driven self-service support leveraging an existing knowledge base and past tickets to provide users with personalized, accurate assistance at all times (Python, LangChain)</li>
+    </ul>
+  </div>
 
-**Peer Tutor** <span class="date-right">Sep 2025 – Dec 2025</span>
-*University of Wisconsin* <span class="location-right">Madison, WI</span>
-- Provided in-class and office hours support for ECE 252 – Intro Computer Engineering
+  <div class="resume-entry">
+    <div class="entry-header">
+      <span class="entry-title">Technical Support</span>
+      <span class="entry-date">Sep 2023 – Jan 2024</span>
+    </div>
+    <div class="entry-subtitle">
+      <span class="entry-company">PAWS Chicago</span>
+      <span class="entry-location">Chicago, IL</span>
+    </div>
+    <ul class="entry-bullets">
+      <li>Documented and resolved or elevated tickets using ServiceNow with a resolution rate above 93%</li>
+    </ul>
+  </div>
 
-**Technical Support & Development** <span class="date-right">May 2025 – Sep 2025</span>
-*PAWS Chicago* <span class="location-right">Chicago, IL</span>
-- Improved knowledge base and technical documentation to create long-lasting impacts & solutions
-- Implemented LLM-driven self-service support leveraging an existing knowledge base and past tickets to provide users with personalized, accurate assistance at all times (Python, LangChain)
+  <div class="resume-entry">
+    <div class="entry-header">
+      <span class="entry-title">Engineer Intern</span>
+      <span class="entry-date">May 2022 – Jul 2022</span>
+    </div>
+    <div class="entry-subtitle">
+      <span class="entry-company">Caterpillar</span>
+      <span class="entry-location">Deerfield, IL</span>
+    </div>
+    <ul class="entry-bullets">
+      <li>Designed eco-friendly ECU profiles guided by data collection (PL Suite) and analysis (Tableau)</li>
+      <li>Developed and proposed potential engine improvements using SolidWorks CAD modeling & simulation</li>
+    </ul>
+  </div>
+</div>
 
-**Technical Support** <span class="date-right">Sep 2023 – Jan 2024</span>
-*PAWS Chicago* <span class="location-right">Chicago, IL</span>
-- Documented and resolved or elevated tickets using ServiceNow with a resolution rate above 93%
+<div class="resume-section">
+  <h3>Projects/Other</h3>
 
-**Engineer Intern** <span class="date-right">May 2022 – Jul 2022</span>
-*Caterpillar* <span class="location-right">Deerfield, IL</span>
-- Designed eco-friendly ECU profiles guided by data collection (PL Suite) and analysis (Tableau)
-- Developed and proposed potential engine improvements using SolidWorks CAD modeling & simulation
+  <div class="resume-entry">
+    <div class="entry-header">
+      <span class="entry-title">Undergraduate Researcher</span>
+      <span class="entry-skills">Python, LangChain, Dafney, Gymnasium, PyFlyt, PyTorch</span>
+    </div>
+    <ul class="entry-bullets">
+      <li>Worked under Dr. Frederic Sala to research and streamline LLM distillation techniques for drone control</li>
+      <li>Developed training environments using the Aerial Gym Simulator built on Isaac Gym</li>
+      <li>Verified correctness of distilled programs using Dafny for static analysis</li>
+    </ul>
+  </div>
 
-## Projects/Other
+  <div class="resume-entry">
+    <div class="entry-header">
+      <span class="entry-title">Insight Wisconsin Application Development Team Lead</span>
+      <span class="entry-skills">C++, Swift</span>
+    </div>
+    <ul class="entry-bullets">
+      <li>Enabled wireless connectivity across cell phones and electrical stimulation hardware</li>
+      <li>Facilitated collaborative project discussions to ensure smooth design and development processes</li>
+    </ul>
+  </div>
 
-**Undergraduate Researcher** | Python, LangChain, Dafney, Gymnasium, PyFlyt, PyTorch
-- Worked under Dr. Frederic Sala to research and streamline LLM distillation techniques for drone control
-- Developed training environments using the Aerial Gym Simulator built on Isaac Gym
-- Verified correctness of distilled programs using Dafny for static analysis
+  <div class="resume-entry">
+    <div class="entry-header">
+      <span class="entry-title">Minecraft Tools & Anti-Cheat Systems</span>
+      <span class="entry-skills">Java, C++, Wireshark, JNI, ASM</span>
+    </div>
+    <ul class="entry-bullets">
+      <li>Contributed to the development of competitive advantage tools for Minecraft Java Edition</li>
+      <li>Discovered applications of concepts from malware detection for the purpose of detecting cheats</li>
+      <li>Collaborated with Vulcan AntiCheat developers to design heuristics for detecting unusual packets</li>
+    </ul>
+  </div>
 
-**Insight Wisconsin Application Development Team Lead** | C++, Swift
-- Enabled wireless connectivity across cell phones and electrical stimulation hardware
-- Facilitated collaborative project discussions to ensure smooth design and development processes
+  <div class="resume-entry">
+    <div class="entry-header">
+      <span class="entry-title">3Docs (MadHacks 2025 1st Place)</span>
+      <span class="entry-skills">Python, Next.js</span>
+    </div>
+    <ul class="entry-bullets">
+      <li>Generates and presents interactive 3D guides from manuals or repair guides provided by the user</li>
+    </ul>
+  </div>
 
-**Minecraft Tools & Anti-Cheat Systems** | Java, C++, Wireshark, JNI, ASM
-- Contributed to the development of competitive advantage tools for Minecraft Java Edition
-- Discovered applications of concepts from malware detection for the purpose of detecting cheats
-- Collaborated with Vulcan AntiCheat developers to design heuristics for detecting unusual packets
+  <div class="resume-entry">
+    <div class="entry-header">
+      <span class="entry-title">Song to FL Studio File</span>
+      <span class="entry-skills">Python</span>
+    </div>
+    <ul class="entry-bullets">
+      <li>Breaks audio samples into components structured as an FL Studio project files</li>
+    </ul>
+  </div>
+</div>
 
-**3Docs (MadHacks 2025 1st Place)** | Python, Next.js
-- Generates and presents interactive 3D guides from manuals or repair guides provided by the user
-
-**Song to FL Studio File** | Python
-- Breaks audio samples into components structured as an FL Studio project files
-
-## SKILLS
-
-Java, C++, Python, Git, Docker, Linux, Make, Test Automation (JUnit, pytest, GTest)
-
+<div class="resume-section">
+  <h3>SKILLS</h3>
+  <div class="entry-details">
+    Java, C++, Python, Git, Docker, Linux, Make, Test Automation (JUnit, pytest, GTest)
+  </div>
 </div>

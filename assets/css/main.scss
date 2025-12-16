@@ -55,6 +55,7 @@ body {
   color: var(--text-color);
   line-height: 1.6;
   font-size: 16px;
+  font-weight: 300;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -79,6 +80,7 @@ body {
       font-size: 2rem;
       color: var(--text-color);
       text-decoration: none;
+      font-weight: 300;
       transition: color 0.3s ease;
 
       &:hover {
@@ -96,13 +98,15 @@ body {
 
     .contact-links-small {
       display: flex;
-      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       gap: 0.5rem;
       font-size: 0.85rem;
       color: var(--text-secondary);
+      flex-wrap: wrap;
 
       span {
-        display: block;
+        white-space: nowrap;
       }
 
       a {
@@ -126,6 +130,7 @@ body {
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.9rem;
+  font-weight: 300;
   transition: all 0.3s ease;
   margin-left: 2rem;
 
@@ -168,7 +173,7 @@ body {
       color: var(--text-color);
       margin-left: 2rem;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 400;
 
       &:hover {
         color: var(--accent-color);
@@ -196,65 +201,42 @@ body {
   color: var(--text-color);
 }
 
-// About section - mobile aspect ratio
-.about-content {
+// About section - simple, no background
+.about-content-simple {
   max-width: 600px;
   margin: 0 auto;
-  padding: 2rem;
-  background-color: var(--surface-color);
-  border-radius: 8px;
-  border-left: 4px solid var(--accent-color);
 
   p {
     font-size: 1.1rem;
     line-height: 1.8;
     color: var(--text-color);
+    font-weight: 300;
   }
 }
 
-// Resume page styles
-.resume-download {
+// Resume page styles - completely restructured
+.resume-header-with-download {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: 2rem;
-  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--accent-color);
 
-  .download-btn {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: opacity 0.3s ease;
+  .resume-name-contact {
+    flex: 1;
 
-    &:hover {
-      opacity: 0.85;
-    }
-  }
-}
-
-.resume-content {
-  max-width: 900px;
-  margin: 0 auto;
-  background-color: var(--surface-color);
-  padding: 2rem;
-  border-radius: 8px;
-
-  .resume-header {
-    text-align: center;
-    margin-bottom: 2rem;
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 1rem;
-
-    h1 {
-      font-size: 2.5rem;
+    .resume-name {
+      font-size: 2rem;
+      font-weight: 500;
       color: var(--il-blue);
-      margin-bottom: 0.5rem;
+      margin: 0 0 0.5rem 0;
     }
 
-    .resume-contact {
-      font-size: 0.95rem;
+    .resume-contact-info {
+      font-size: 0.9rem;
       color: var(--text-secondary);
+      font-weight: 300;
 
       a {
         color: var(--accent-color);
@@ -267,63 +249,107 @@ body {
     }
   }
 
-  h2 {
-    font-size: 1.3rem;
-    color: var(--il-blue);
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 0.3rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  p, li {
-    margin-bottom: 0.5rem;
-    line-height: 1.6;
-  }
-
-  strong {
-    color: var(--text-color);
-    font-weight: 500;
-  }
-
-  em {
-    color: var(--text-secondary);
-  }
-
-  .date-right, .gpa-right, .location-right {
-    float: right;
-    color: var(--text-secondary);
-    font-style: italic;
-  }
-
-  ul {
-    margin-left: 1.5rem;
-    margin-bottom: 1rem;
-
-    li {
-      margin-bottom: 0.5rem;
-    }
-  }
-
-  a {
-    color: var(--accent-color);
+  .download-btn-inline {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
     text-decoration: none;
+    font-weight: 400;
+    font-size: 0.9rem;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
 
     &:hover {
-      text-decoration: underline;
+      opacity: 0.85;
     }
   }
 }
 
-[data-theme="dark"] .resume-content {
-  .resume-header h1 {
-    color: var(--text-color);
+[data-theme="dark"] .resume-header-with-download .resume-name-contact .resume-name {
+  color: var(--text-color);
+}
+
+.resume-section {
+  margin-bottom: 2.5rem;
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--il-blue);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.3rem;
+  }
+}
+
+[data-theme="dark"] .resume-section h3 {
+  color: var(--text-color);
+}
+
+.resume-entry {
+  margin-bottom: 1.5rem;
+
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.3rem;
+
+    .entry-title {
+      font-weight: 500;
+      color: var(--text-color);
+      font-size: 1rem;
+    }
+
+    .entry-date,
+    .entry-skills {
+      color: var(--text-secondary);
+      font-style: italic;
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
   }
 
-  h2 {
+  .entry-subtitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 300;
+
+    .entry-company {
+      color: var(--text-secondary);
+    }
+
+    .entry-location,
+    .entry-gpa {
+      color: var(--text-secondary);
+    }
+  }
+
+  .entry-details {
     color: var(--text-color);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .entry-bullets {
+    list-style: disc;
+    margin-left: 1.5rem;
+
+    li {
+      margin-bottom: 0.4rem;
+      color: var(--text-color);
+      font-weight: 300;
+      line-height: 1.6;
+    }
   }
 }
 
@@ -334,6 +360,7 @@ h2 {
   color: var(--il-blue);
   border-bottom: 2px solid var(--accent-color);
   padding-bottom: 0.5rem;
+  font-weight: 500;
 }
 
 [data-theme="dark"] h2 {
@@ -346,6 +373,7 @@ ul {
 
   li {
     margin-bottom: 0.5rem;
+    font-weight: 300;
   }
 }
 
@@ -368,6 +396,7 @@ ul {
       font-size: 1.3rem;
       margin-bottom: 0.8rem;
       color: var(--text-color);
+      font-weight: 500;
 
       a {
         color: var(--text-color);
@@ -382,11 +411,13 @@ ul {
     p {
       color: var(--text-secondary);
       margin-bottom: 0.8rem;
+      font-weight: 300;
     }
 
     .project-meta {
       font-size: 0.9rem;
       color: var(--text-secondary);
+      font-weight: 300;
     }
   }
 }
@@ -415,6 +446,7 @@ ul {
       color: var(--text-secondary);
       font-size: 0.9rem;
       margin-bottom: 0.5rem;
+      font-weight: 300;
     }
 
     .post-title {
@@ -424,6 +456,7 @@ ul {
       a {
         color: var(--text-color);
         text-decoration: none;
+        font-weight: 500;
 
         &:hover {
           color: var(--accent-color);
@@ -433,6 +466,7 @@ ul {
 
     .post-excerpt {
       color: var(--text-secondary);
+      font-weight: 300;
     }
   }
 }
@@ -442,11 +476,13 @@ ul {
     color: var(--il-blue);
     margin-top: 2rem;
     margin-bottom: 1rem;
+    font-weight: 500;
   }
 
   p {
     margin-bottom: 1rem;
     color: var(--text-color);
+    font-weight: 300;
   }
 
   a {
@@ -464,6 +500,7 @@ ul {
     border-radius: 3px;
     font-family: 'Courier New', monospace;
     color: var(--accent-color);
+    font-weight: 400;
   }
 
   pre {
@@ -491,7 +528,7 @@ ul {
 .site-footer {
   background-color: var(--surface-color);
   border-top: 2px solid var(--accent-color);
-  padding: 2rem 0;
+  padding: 1rem 0;
   margin-top: 4rem;
 
   .wrapper {
@@ -500,20 +537,16 @@ ul {
     padding: 0 2rem;
     text-align: center;
     color: var(--text-secondary);
-  }
-
-  .contact-links {
+    font-size: 0.85rem;
+    font-weight: 300;
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    margin-bottom: 1rem;
+    align-items: center;
+    gap: 0.5rem;
     flex-wrap: wrap;
-    font-size: 0.95rem;
 
     span {
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
+      white-space: nowrap;
     }
 
     a {
@@ -524,11 +557,6 @@ ul {
         text-decoration: underline;
       }
     }
-  }
-
-  .copyright {
-    margin-top: 1rem;
-    font-size: 0.9rem;
   }
 }
 
@@ -576,25 +604,34 @@ a {
     }
   }
 
-  .about-content {
-    padding: 1.5rem;
-
+  .about-content-simple {
     p {
       font-size: 1rem;
     }
   }
 
-  .resume-content {
-    padding: 1.5rem;
+  .resume-header-with-download {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
 
-    .resume-header h1 {
-      font-size: 2rem;
+    .download-btn-inline {
+      align-self: flex-start;
     }
+  }
 
-    .date-right, .gpa-right, .location-right {
-      float: none;
-      display: block;
-      margin-top: 0.3rem;
+  .resume-entry {
+    .entry-header,
+    .entry-subtitle {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .entry-date,
+      .entry-location,
+      .entry-gpa,
+      .entry-skills {
+        margin-top: 0.2rem;
+      }
     }
   }
 
@@ -606,8 +643,9 @@ a {
     font-size: 1.5rem;
   }
 
-  .site-footer .contact-links {
+  .site-footer .wrapper {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.3rem;
+    font-size: 0.75rem;
   }
 }
