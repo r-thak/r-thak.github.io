@@ -70,20 +70,19 @@ body {
 .home-landing {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 100vh;
   max-height: 100vh;
   overflow: hidden;
-  padding: 0.5rem 2rem 0;
+  padding: 0 2rem 0;
 
   .home-nav-landing {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     align-items: center;
-    flex: 1;
-    justify-content: center;
+    margin-bottom: 3rem;
 
     .home-link-landing {
       font-size: 2rem;
@@ -99,7 +98,8 @@ body {
   }
 
   .home-footer-landing {
-    padding-bottom: 0.5rem;
+    position: absolute;
+    bottom: 0.25rem;
 
     .contact-links-small {
       display: flex;
@@ -148,13 +148,13 @@ body {
   margin-left: 2rem;
   min-width: 70px;
   height: 38px;
-  background-size: cover;
+  background-size: 120%;
   background-position: center;
   overflow: hidden;
 
   &:hover {
     border-color: var(--accent-color);
-    background-size: 120%;
+    background-size: 100%;
   }
 }
 
