@@ -75,7 +75,7 @@ body {
   height: 100vh;
   max-height: 100vh;
   overflow: hidden;
-  padding: 3rem 2rem 1.5rem;
+  padding: 2rem 2rem 1.5rem;
 
   .home-nav-landing {
     display: flex;
@@ -142,7 +142,7 @@ body {
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 300;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, background-size 0.3s ease;
   margin-left: 2rem;
   min-width: 70px;
   height: 38px;
@@ -152,7 +152,7 @@ body {
 
   &:hover {
     border-color: var(--accent-color);
-    background-size: 110%;
+    background-size: 120%;
   }
 }
 
@@ -214,7 +214,8 @@ body {
   color: var(--il-blue);
   border-bottom: 3px solid var(--accent-color);
   padding-bottom: 0.5rem;
-  max-width: 832px;
+  width: 645px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -225,7 +226,8 @@ body {
 
 // About section with More button
 .about-content-simple {
-  max-width: 832px;
+  width: 645px;
+  max-width: 100%;
   margin: 0 auto;
   position: relative;
   padding-bottom: 3rem;
@@ -265,7 +267,8 @@ body {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
   border-bottom: 2px solid var(--accent-color);
-  max-width: 832px;
+  width: 645px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 
@@ -319,7 +322,8 @@ body {
 
 .resume-section {
   margin-bottom: 2.5rem;
-  max-width: 832px;
+  width: 645px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 
@@ -428,7 +432,8 @@ ul {
 
 .projects-section {
   margin-bottom: 4rem;
-  max-width: 832px;
+  width: 645px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 
@@ -476,7 +481,8 @@ ul {
 
 .blog-section {
   margin-bottom: 4rem;
-  max-width: 832px;
+  width: 645px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 
@@ -488,7 +494,8 @@ ul {
 
 .post-list {
   list-style: none;
-  max-width: 832px;
+  width: 645px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 
@@ -529,7 +536,8 @@ ul {
 }
 
 .page-content, .post-content {
-  max-width: 832px;
+  width: 645px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 
