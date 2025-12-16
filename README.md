@@ -1,6 +1,6 @@
 # Personal Portfolio Website
 
-This is my personal portfolio website built with Jekyll and hosted on GitHub Pages.
+Claude cheesed this because I needed to make a website but I have finals tomorrow. I'll make something proper over break
 
 ## Features
 
@@ -115,12 +115,9 @@ excerpt: "Brief description for listings"
 
 Edit `_data/projects.yml` to add projects to the featured or other sections.
 
-## License
-
-This website and its content are © Rohan Thakkar. All rights reserved.
-
 ## Contact
 
 - Email: mail@rthak.com
 - GitHub: [r-thak](https://github.com/r-thak)
 - LinkedIn: [rthak](https://linkedin.com/in/rthak)
+
