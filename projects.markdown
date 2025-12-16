@@ -16,13 +16,13 @@ async function fetchGitHubProjects() {
   }
 
   try {
-    const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=10`);
+    const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=5`);
     const repos = await response.json();
 
     const projectsContainer = document.getElementById('github-projects');
     projectsContainer.innerHTML = '';
 
-    const validRepos = repos.filter(repo => !repo.fork);
+    const validRepos = repos.filter(repo => !repo.fork).slice(0, 5);
 
     if (validRepos.length === 0) {
       projectsContainer.innerHTML = '<p>No projects found.</p>';

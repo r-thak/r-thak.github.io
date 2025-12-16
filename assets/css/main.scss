@@ -19,13 +19,24 @@
   src: url('../fonts/roboto-v50-latin-500.woff2') format('woff2');
 }
 
-// Dark mode color scheme
-$background-color: #1a1a1a;
-$surface-color: #2d2d2d;
-$text-color: #e0e0e0;
-$text-secondary: #b0b0b0;
-$accent-color: #4a9eff;
-$border-color: #404040;
+// CSS Variables for theming
+:root {
+  --background-color: #f5f5f5;
+  --surface-color: #ffffff;
+  --text-color: #333333;
+  --text-secondary: #666666;
+  --accent-color: #4a9eff;
+  --border-color: #e0e0e0;
+}
+
+[data-theme="dark"] {
+  --background-color: #1a1a1a;
+  --surface-color: #2d2d2d;
+  --text-color: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --accent-color: #4a9eff;
+  --border-color: #404040;
+}
 
 * {
   margin: 0;
@@ -35,45 +46,107 @@ $border-color: #404040;
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: $background-color;
-  color: $text-color;
+  background-color: var(--background-color);
+  color: var(--text-color);
   line-height: 1.6;
   font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// Theme toggle button
+.theme-toggle {
+  background: none;
+  border: 2px solid var(--border-color);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  margin-left: 2rem;
+
+  &:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+  }
 }
 
 .site-header {
-  background-color: $surface-color;
-  border-bottom: 1px solid $border-color;
+  background-color: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
   padding: 1.5rem 0;
 
   .wrapper {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .site-title {
     font-size: 1.8rem;
     font-weight: 500;
-    color: $text-color;
+    color: var(--text-color);
     text-decoration: none;
 
     &:hover {
-      color: $accent-color;
+      color: var(--accent-color);
     }
   }
 
   .site-nav {
-    float: right;
-    line-height: 3rem;
+    display: flex;
+    align-items: center;
 
     .page-link {
-      color: $text-color;
+      color: var(--text-color);
       margin-left: 2rem;
       text-decoration: none;
 
       &:hover {
-        color: $accent-color;
+        color: var(--accent-color);
+      }
+    }
+  }
+}
+
+// Simple home page styles
+.home-simple {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 8rem 2rem;
+
+  .site-title-large {
+    font-size: 4rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 4rem;
+    font-style: italic;
+  }
+
+  .home-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+
+    .home-link {
+      font-size: 1.5rem;
+      color: var(--text-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--accent-color);
       }
     }
   }
@@ -89,50 +162,90 @@ body {
   font-size: 2.5rem;
   font-weight: 500;
   margin-bottom: 2rem;
-  color: $text-color;
+  color: var(--text-color);
 }
 
-.experience-section {
-  margin-bottom: 4rem;
+// Resume page styles
+.resume-download {
+  margin-bottom: 2rem;
 
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: $text-color;
-    border-bottom: 2px solid $accent-color;
-    padding-bottom: 0.5rem;
+  .download-btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.experience-item {
+  background-color: var(--surface-color);
+  border-left: 3px solid var(--accent-color);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
   }
 
-  .experience-item {
-    background-color: $surface-color;
-    border-left: 3px solid $accent-color;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-radius: 4px;
+  .job-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text-color);
+  }
 
-    .job-title {
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: $text-color;
+  .duration {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+  }
+
+  .company {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin-bottom: 0.3rem;
+  }
+
+  .location {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .job-description {
+    margin-left: 1.5rem;
+
+    li {
       margin-bottom: 0.5rem;
+      color: var(--text-color);
     }
+  }
+}
 
-    .company {
-      font-size: 1.1rem;
-      color: $accent-color;
-      margin-bottom: 0.3rem;
-    }
+h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.5rem;
+}
 
-    .duration {
-      color: $text-secondary;
-      font-size: 0.95rem;
-      margin-bottom: 0.3rem;
-    }
+ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
 
-    .location {
-      color: $text-secondary;
-      font-size: 0.9rem;
-    }
+  li {
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -142,41 +255,41 @@ body {
   h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: $text-color;
-    border-bottom: 2px solid $accent-color;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--accent-color);
     padding-bottom: 0.5rem;
   }
 
   .project-item {
-    background-color: $surface-color;
+    background-color: var(--surface-color);
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     border-radius: 4px;
-    border-left: 3px solid $accent-color;
+    border-left: 3px solid var(--accent-color);
 
     h3 {
       font-size: 1.3rem;
       margin-bottom: 0.8rem;
-      color: $text-color;
+      color: var(--text-color);
 
       a {
-        color: $text-color;
+        color: var(--text-color);
         text-decoration: none;
 
         &:hover {
-          color: $accent-color;
+          color: var(--accent-color);
         }
       }
     }
 
     p {
-      color: $text-secondary;
+      color: var(--text-secondary);
       margin-bottom: 0.8rem;
     }
 
     .project-meta {
       font-size: 0.9rem;
-      color: $text-secondary;
+      color: var(--text-secondary);
     }
   }
 }
@@ -187,62 +300,62 @@ body {
   h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: $text-color;
-    border-bottom: 2px solid $accent-color;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--accent-color);
     padding-bottom: 0.5rem;
   }
+}
 
-  .post-list {
-    list-style: none;
+.post-list {
+  list-style: none;
 
-    .post-item {
-      background-color: $surface-color;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      border-radius: 4px;
-      border-left: 3px solid $accent-color;
+  .post-item {
+    background-color: var(--surface-color);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-color);
 
-      .post-meta {
-        color: $text-secondary;
-        font-size: 0.9rem;
-        margin-bottom: 0.5rem;
-      }
+    .post-meta {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
 
-      .post-title {
-        font-size: 1.3rem;
-        margin-bottom: 0.5rem;
+    .post-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
 
-        a {
-          color: $text-color;
-          text-decoration: none;
+      a {
+        color: var(--text-color);
+        text-decoration: none;
 
-          &:hover {
-            color: $accent-color;
-          }
+        &:hover {
+          color: var(--accent-color);
         }
       }
+    }
 
-      .post-excerpt {
-        color: $text-secondary;
-      }
+    .post-excerpt {
+      color: var(--text-secondary);
     }
   }
 }
 
-.post-content {
+.page-content, .post-content {
   h1, h2, h3, h4, h5, h6 {
-    color: $text-color;
+    color: var(--text-color);
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
 
   p {
     margin-bottom: 1rem;
-    color: $text-color;
+    color: var(--text-color);
   }
 
   a {
-    color: $accent-color;
+    color: var(--accent-color);
     text-decoration: none;
 
     &:hover {
@@ -251,14 +364,14 @@ body {
   }
 
   code {
-    background-color: $surface-color;
+    background-color: var(--surface-color);
     padding: 0.2rem 0.4rem;
     border-radius: 3px;
     font-family: 'Courier New', monospace;
   }
 
   pre {
-    background-color: $surface-color;
+    background-color: var(--surface-color);
     padding: 1rem;
     border-radius: 4px;
     overflow-x: auto;
@@ -272,8 +385,8 @@ body {
 }
 
 .site-footer {
-  background-color: $surface-color;
-  border-top: 1px solid $border-color;
+  background-color: var(--surface-color);
+  border-top: 1px solid var(--border-color);
   padding: 2rem 0;
   margin-top: 4rem;
 
@@ -282,26 +395,74 @@ body {
     margin: 0 auto;
     padding: 0 2rem;
     text-align: center;
-    color: $text-secondary;
+    color: var(--text-secondary);
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+
+    a {
+      color: var(--text-color);
+      text-decoration: none;
+
+      &:hover {
+        color: var(--accent-color);
+      }
+    }
+  }
+
+  .copyright {
+    margin-top: 1rem;
+    font-size: 0.9rem;
   }
 }
 
 a {
-  color: $accent-color;
+  color: var(--accent-color);
 
   &:visited {
-    color: $accent-color;
+    color: var(--accent-color);
   }
 }
 
 // Responsive design
 @media screen and (max-width: 768px) {
+  .site-header .wrapper {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
   .site-header .site-nav {
-    float: none;
+    flex-wrap: wrap;
+    justify-content: center;
 
     .page-link {
-      margin-left: 0;
-      margin-right: 1rem;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .theme-toggle {
+    margin-left: 0.5rem;
+  }
+
+  .home-simple {
+    padding: 4rem 1rem;
+
+    .site-title-large {
+      font-size: 2.5rem;
+    }
+
+    .tagline {
+      font-size: 1rem;
+    }
+
+    .home-nav .home-link {
+      font-size: 1.2rem;
     }
   }
 
@@ -309,9 +470,12 @@ a {
     font-size: 2rem;
   }
 
-  .experience-section h2,
-  .projects-section h2,
-  .blog-section h2 {
+  .experience-item .job-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  h2 {
     font-size: 1.5rem;
   }
 }
