@@ -80,9 +80,9 @@ body {
   .home-nav-landing {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
     align-items: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 
     .home-link-landing {
       font-size: 2rem;
@@ -99,7 +99,7 @@ body {
 
   .home-footer-landing {
     position: absolute;
-    bottom: 0.25rem;
+    bottom: 0;
 
     .contact-links-small {
       display: flex;
