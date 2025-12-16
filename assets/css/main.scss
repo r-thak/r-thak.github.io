@@ -19,23 +19,28 @@
   src: url('../fonts/roboto-v50-latin-500.woff2') format('woff2');
 }
 
-// CSS Variables for theming
+// UIUC Brand Colors
 :root {
-  --background-color: #f5f5f5;
-  --surface-color: #ffffff;
-  --text-color: #333333;
-  --text-secondary: #666666;
-  --accent-color: #4a9eff;
-  --border-color: #e0e0e0;
+  --il-orange: #FF5F05;
+  --il-blue: #13294B;
+  --il-blue-light: #4877B8;
+  --il-blue-lighter: #B5C8E2;
+  --il-blue-dark: #000033;
+  --background-color: #FFFFFF;
+  --surface-color: #F8F8F8;
+  --text-color: #13294B;
+  --text-secondary: #707372;
+  --accent-color: #FF5F05;
+  --border-color: #E1E7F1;
 }
 
 [data-theme="dark"] {
-  --background-color: #1a1a1a;
-  --surface-color: #2d2d2d;
-  --text-color: #e0e0e0;
-  --text-secondary: #b0b0b0;
-  --accent-color: #4a9eff;
-  --border-color: #404040;
+  --background-color: #13294B;
+  --surface-color: #2F4668;
+  --text-color: #E1E7F1;
+  --text-secondary: #B5C8E2;
+  --accent-color: #FF5F05;
+  --border-color: #4877B8;
 }
 
 * {
@@ -51,6 +56,65 @@ body {
   line-height: 1.6;
   font-size: 16px;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// Home landing page - no header/footer
+.home-landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+
+  .home-nav-landing {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: auto;
+    margin-top: auto;
+
+    .home-link-landing {
+      font-size: 2rem;
+      color: var(--text-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--accent-color);
+      }
+    }
+  }
+
+  .home-footer-landing {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+
+    .contact-links-small {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+
+      span {
+        display: block;
+      }
+
+      a {
+        color: var(--text-secondary);
+        text-decoration: none;
+
+        &:hover {
+          color: var(--accent-color);
+        }
+      }
+    }
+  }
 }
 
 // Theme toggle button
@@ -73,7 +137,7 @@ body {
 
 .site-header {
   background-color: var(--surface-color);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 2px solid var(--accent-color);
   padding: 1.5rem 0;
 
   .wrapper {
@@ -88,11 +152,11 @@ body {
   .site-title {
     font-size: 1.8rem;
     font-weight: 500;
-    color: var(--text-color);
+    color: var(--accent-color);
     text-decoration: none;
 
     &:hover {
-      color: var(--accent-color);
+      color: var(--il-blue-light);
     }
   }
 
@@ -104,46 +168,7 @@ body {
       color: var(--text-color);
       margin-left: 2rem;
       text-decoration: none;
-
-      &:hover {
-        color: var(--accent-color);
-      }
-    }
-  }
-}
-
-// Simple home page styles
-.home-simple {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 8rem 2rem;
-
-  .site-title-large {
-    font-size: 4rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    color: var(--text-color);
-  }
-
-  .tagline {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    margin-bottom: 4rem;
-    font-style: italic;
-  }
-
-  .home-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: center;
-
-    .home-link {
-      font-size: 1.5rem;
-      color: var(--text-color);
-      text-decoration: none;
-      transition: color 0.3s ease;
+      font-weight: 500;
 
       &:hover {
         color: var(--accent-color);
@@ -162,12 +187,35 @@ body {
   font-size: 2.5rem;
   font-weight: 500;
   margin-bottom: 2rem;
+  color: var(--il-blue);
+  border-bottom: 3px solid var(--accent-color);
+  padding-bottom: 0.5rem;
+}
+
+[data-theme="dark"] .page-heading {
   color: var(--text-color);
+}
+
+// About section - mobile aspect ratio
+.about-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-color);
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+  }
 }
 
 // Resume page styles
 .resume-download {
   margin-bottom: 2rem;
+  text-align: center;
 
   .download-btn {
     display: inline-block;
@@ -176,58 +224,106 @@ body {
     padding: 0.75rem 1.5rem;
     border-radius: 4px;
     text-decoration: none;
+    font-weight: 500;
     transition: opacity 0.3s ease;
 
     &:hover {
-      opacity: 0.8;
+      opacity: 0.85;
     }
   }
 }
 
-.experience-item {
+.resume-content {
+  max-width: 900px;
+  margin: 0 auto;
   background-color: var(--surface-color);
-  border-left: 3px solid var(--accent-color);
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-radius: 4px;
+  padding: 2rem;
+  border-radius: 8px;
 
-  .job-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 0.5rem;
+  .resume-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 1rem;
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--il-blue);
+      margin-bottom: 0.5rem;
+    }
+
+    .resume-contact {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+
+      a {
+        color: var(--accent-color);
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
   }
 
-  .job-title {
+  h2 {
     font-size: 1.3rem;
-    font-weight: 500;
+    color: var(--il-blue);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  p, li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+
+  strong {
     color: var(--text-color);
+    font-weight: 500;
   }
 
-  .duration {
+  em {
     color: var(--text-secondary);
-    font-size: 0.95rem;
   }
 
-  .company {
-    font-size: 1.1rem;
-    color: var(--accent-color);
-    margin-bottom: 0.3rem;
-  }
-
-  .location {
+  .date-right, .gpa-right, .location-right {
+    float: right;
     color: var(--text-secondary);
-    font-size: 0.9rem;
-    margin-bottom: 0.8rem;
+    font-style: italic;
   }
 
-  .job-description {
+  ul {
     margin-left: 1.5rem;
+    margin-bottom: 1rem;
 
     li {
       margin-bottom: 0.5rem;
-      color: var(--text-color);
     }
+  }
+
+  a {
+    color: var(--accent-color);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+[data-theme="dark"] .resume-content {
+  .resume-header h1 {
+    color: var(--text-color);
+  }
+
+  h2 {
+    color: var(--text-color);
   }
 }
 
@@ -235,9 +331,13 @@ h2 {
   font-size: 2rem;
   margin-top: 2rem;
   margin-bottom: 1.5rem;
-  color: var(--text-color);
+  color: var(--il-blue);
   border-bottom: 2px solid var(--accent-color);
   padding-bottom: 0.5rem;
+}
+
+[data-theme="dark"] h2 {
+  color: var(--text-color);
 }
 
 ul {
@@ -255,9 +355,6 @@ ul {
   h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: var(--text-color);
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 0.5rem;
   }
 
   .project-item {
@@ -265,7 +362,7 @@ ul {
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     border-radius: 4px;
-    border-left: 3px solid var(--accent-color);
+    border-left: 4px solid var(--accent-color);
 
     h3 {
       font-size: 1.3rem;
@@ -300,21 +397,19 @@ ul {
   h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: var(--text-color);
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 0.5rem;
   }
 }
 
 .post-list {
   list-style: none;
+  margin-left: 0;
 
   .post-item {
     background-color: var(--surface-color);
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     border-radius: 4px;
-    border-left: 3px solid var(--accent-color);
+    border-left: 4px solid var(--accent-color);
 
     .post-meta {
       color: var(--text-secondary);
@@ -344,7 +439,7 @@ ul {
 
 .page-content, .post-content {
   h1, h2, h3, h4, h5, h6 {
-    color: var(--text-color);
+    color: var(--il-blue);
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
@@ -368,6 +463,7 @@ ul {
     padding: 0.2rem 0.4rem;
     border-radius: 3px;
     font-family: 'Courier New', monospace;
+    color: var(--accent-color);
   }
 
   pre {
@@ -376,6 +472,7 @@ ul {
     border-radius: 4px;
     overflow-x: auto;
     margin-bottom: 1rem;
+    border-left: 4px solid var(--accent-color);
 
     code {
       background-color: transparent;
@@ -384,9 +481,16 @@ ul {
   }
 }
 
+[data-theme="dark"] .page-content,
+[data-theme="dark"] .post-content {
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color);
+  }
+}
+
 .site-footer {
   background-color: var(--surface-color);
-  border-top: 1px solid var(--border-color);
+  border-top: 2px solid var(--accent-color);
   padding: 2rem 0;
   margin-top: 4rem;
 
@@ -404,13 +508,20 @@ ul {
     gap: 2rem;
     margin-bottom: 1rem;
     flex-wrap: wrap;
+    font-size: 0.95rem;
+
+    span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
 
     a {
-      color: var(--text-color);
+      color: var(--accent-color);
       text-decoration: none;
 
       &:hover {
-        color: var(--accent-color);
+        text-decoration: underline;
       }
     }
   }
@@ -450,19 +561,40 @@ a {
     margin-left: 0.5rem;
   }
 
-  .home-simple {
-    padding: 4rem 1rem;
-
-    .site-title-large {
-      font-size: 2.5rem;
+  .home-landing {
+    .home-nav-landing .home-link-landing {
+      font-size: 1.5rem;
     }
 
-    .tagline {
+    .home-footer-landing {
+      bottom: 1rem;
+
+      .contact-links-small {
+        font-size: 0.75rem;
+        gap: 0.3rem;
+      }
+    }
+  }
+
+  .about-content {
+    padding: 1.5rem;
+
+    p {
       font-size: 1rem;
     }
+  }
 
-    .home-nav .home-link {
-      font-size: 1.2rem;
+  .resume-content {
+    padding: 1.5rem;
+
+    .resume-header h1 {
+      font-size: 2rem;
+    }
+
+    .date-right, .gpa-right, .location-right {
+      float: none;
+      display: block;
+      margin-top: 0.3rem;
     }
   }
 
@@ -470,12 +602,12 @@ a {
     font-size: 2rem;
   }
 
-  .experience-item .job-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   h2 {
     font-size: 1.5rem;
+  }
+
+  .site-footer .contact-links {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }

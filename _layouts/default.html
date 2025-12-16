@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
 <body>
+  {% unless page.layout == 'home-simple' %}
   <header class="site-header">
     <div class="wrapper">
       <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
@@ -24,55 +25,64 @@
       </nav>
     </div>
   </header>
+  {% endunless %}
 
   <main class="site-content">
     {{ content }}
   </main>
 
+  {% unless page.layout == 'home-simple' %}
   <footer class="site-footer">
     <div class="wrapper">
       <div class="contact-links">
-        <a href="mailto:mail@rthak.com">Email</a>
-        <a href="https://linkedin.com/in/rthak" target="_blank">LinkedIn</a>
-        <a href="https://github.com/r-thak" target="_blank">GitHub</a>
-        <a href="https://instagram.com/rohanthakkar_" target="_blank">Instagram</a>
-        <a href="https://discord.com/users/rt552" target="_blank">Discord</a>
+        <span>📧 mail@rthak.com</span>
+        <span>🔗 <a href="https://github.com/r-thak" target="_blank">github.com/r-thak</a></span>
+        <span>📷 <a href="https://instagram.com/rohanthakkar_" target="_blank">@rohanthakkar_</a></span>
+        <span>💬 <a href="https://discord.com/users/rt552" target="_blank">@rt552</a></span>
       </div>
       <div class="copyright">
         <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
       </div>
     </div>
   </footer>
+  {% endunless %}
 
   <script>
     // Theme toggle functionality
     const themeToggle = document.getElementById('theme-toggle');
-    const lightSpan = document.querySelector('.theme-toggle-light');
-    const darkSpan = document.querySelector('.theme-toggle-dark');
-    const htmlElement = document.documentElement;
+    if (themeToggle) {
+      const lightSpan = document.querySelector('.theme-toggle-light');
+      const darkSpan = document.querySelector('.theme-toggle-dark');
+      const htmlElement = document.documentElement;
 
-    // Set default theme to dark
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-    htmlElement.setAttribute('data-theme', currentTheme);
-    updateToggleButton(currentTheme);
+      // Set default theme to dark
+      const currentTheme = localStorage.getItem('theme') || 'dark';
+      htmlElement.setAttribute('data-theme', currentTheme);
+      updateToggleButton(currentTheme);
 
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = htmlElement.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
-      htmlElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateToggleButton(newTheme);
-    });
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateToggleButton(newTheme);
+      });
 
-    function updateToggleButton(theme) {
-      if (theme === 'dark') {
-        lightSpan.style.display = 'none';
-        darkSpan.style.display = 'inline';
-      } else {
-        lightSpan.style.display = 'inline';
-        darkSpan.style.display = 'none';
+      function updateToggleButton(theme) {
+        if (theme === 'dark') {
+          lightSpan.style.display = 'none';
+          darkSpan.style.display = 'inline';
+        } else {
+          lightSpan.style.display = 'inline';
+          darkSpan.style.display = 'none';
+        }
       }
+    } else {
+      // For home page without header, still set theme
+      const htmlElement = document.documentElement;
+      const currentTheme = localStorage.getItem('theme') || 'dark';
+      htmlElement.setAttribute('data-theme', currentTheme);
     }
   </script>
 </body>
