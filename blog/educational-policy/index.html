@@ -1,0 +1,32 @@
+---
+layout: page
+title: Educational Policy
+permalink: /blog/educational-policy/
+---
+
+<h1>Educational Policy</h1>
+
+<p>Ideas and perspectives on improving education, from the classroom to the institution.</p>
+
+{% assign policy_posts = site.educational_policy | sort: 'date' | reverse %}
+{% if policy_posts.size > 0 %}
+  <ul class="post-list">
+    {% for post in policy_posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <h2>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h2>
+        {% if post.excerpt %}
+          <div class="post-excerpt">{{ post.excerpt }}</div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p><em>No educational policy posts yet. Check back soon!</em></p>
+{% endif %}
+
+<p><a href="/blog/">← Back to Blog</a></p>

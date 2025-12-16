@@ -1,0 +1,23 @@
+# List your GitHub projects here
+# The plugin will fetch descriptions and stats from GitHub at build time
+
+featured:
+  - repo: r-thak/3docs
+    name: "3Docs"
+    highlight: "MadHacks 2025 1st Place Winner"
+    custom_description: "Generates and presents interactive 3D guides from manuals or repair guides"
+
+  - repo: r-thak/song-to-fl
+    name: "Song to FL Studio"
+    custom_description: "Breaks audio samples into components structured as FL Studio project files"
+
+other:
+  - repo: r-thak/minecraft-tools
+    name: "Minecraft Tools & Anti-Cheat"
+    custom_description: "Competitive advantage tools and anti-cheat heuristics for Minecraft Java Edition"
+
+# Add more projects as needed
+# Format:
+# - repo: username/repo-name
+#   name: "Display Name"
+#   custom_description: "Optional custom description (if empty, uses GitHub description)"

@@ -1,0 +1,32 @@
+---
+layout: page
+title: Course Reviews
+permalink: /blog/course-reviews/
+---
+
+<h1>Course Reviews</h1>
+
+<p>Insights and advice on courses at UW-Madison and beyond. Helping students make informed decisions about their education.</p>
+
+{% assign course_reviews = site.course_reviews | sort: 'date' | reverse %}
+{% if course_reviews.size > 0 %}
+  <ul class="post-list">
+    {% for post in course_reviews %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <h2>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h2>
+        {% if post.excerpt %}
+          <div class="post-excerpt">{{ post.excerpt }}</div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p><em>No course reviews yet. Check back soon!</em></p>
+{% endif %}
+
+<p><a href="/blog/">← Back to Blog</a></p>

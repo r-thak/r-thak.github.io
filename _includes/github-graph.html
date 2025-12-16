@@ -1,0 +1,54 @@
+<!-- GitHub Contribution Graph -->
+<div class="github-graph-container">
+  <h2>GitHub Contributions</h2>
+
+  {% if site.github_username %}
+  <div class="github-graph">
+    <img src="https://ghchart.rshah.org/{{ site.github_username }}" alt="GitHub Contribution Graph" loading="lazy" />
+  </div>
+
+  <p class="github-graph-caption">
+    View full profile on <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </p>
+  {% else %}
+  <p>Configure <code>github_username</code> in <code>_config.yml</code> to display your GitHub contribution graph.</p>
+  {% endif %}
+</div>
+
+<style>
+  .github-graph-container {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    background-color: #f6f8fa;
+  }
+
+  .github-graph {
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .github-graph img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .github-graph-caption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #586069;
+    margin-top: 0.5rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .github-graph-container {
+      background-color: #0d1117;
+      border-color: #30363d;
+    }
+
+    .github-graph-caption {
+      color: #8b949e;
+    }
+  }
+</style>
