@@ -73,7 +73,9 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 100vh;
-  padding: 4rem 2rem 2rem;
+  max-height: 100vh;
+  overflow: hidden;
+  padding: 3rem 2rem 1.5rem;
 
   .home-nav-landing {
     display: flex;
@@ -140,16 +142,17 @@ body {
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 300;
-  transition: all 0.3s ease, transform 0.3s ease;
+  transition: border-color 0.3s ease;
   margin-left: 2rem;
   min-width: 70px;
   height: 38px;
   background-size: cover;
   background-position: center;
+  overflow: hidden;
 
   &:hover {
     border-color: var(--accent-color);
-    transform: scale(1.1);
+    background-size: 110%;
   }
 }
 
@@ -172,6 +175,7 @@ body {
     font-weight: 500;
     color: var(--text-color);
     text-decoration: none;
+    transition: color 0.3s ease;
 
     &:hover {
       color: var(--accent-color);
@@ -201,11 +205,6 @@ body {
   margin: 0 auto;
   padding: 3rem 2rem;
   flex: 1;
-
-  // Match content width to footer width
-  .page-heading {
-    max-width: 100%;
-  }
 }
 
 .page-heading {
@@ -215,6 +214,9 @@ body {
   color: var(--il-blue);
   border-bottom: 3px solid var(--accent-color);
   padding-bottom: 0.5rem;
+  max-width: 832px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 [data-theme="dark"] .page-heading {
@@ -223,7 +225,7 @@ body {
 
 // About section with More button
 .about-content-simple {
-  max-width: 600px;
+  max-width: 832px;
   margin: 0 auto;
   position: relative;
   padding-bottom: 3rem;
@@ -263,6 +265,9 @@ body {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
   border-bottom: 2px solid var(--accent-color);
+  max-width: 832px;
+  margin-left: auto;
+  margin-right: auto;
 
   .resume-name-contact {
     flex: 1;
@@ -314,6 +319,9 @@ body {
 
 .resume-section {
   margin-bottom: 2.5rem;
+  max-width: 832px;
+  margin-left: auto;
+  margin-right: auto;
 
   h3 {
     font-size: 1.1rem;
@@ -420,6 +428,9 @@ ul {
 
 .projects-section {
   margin-bottom: 4rem;
+  max-width: 832px;
+  margin-left: auto;
+  margin-right: auto;
 
   h2 {
     font-size: 2rem;
@@ -465,6 +476,9 @@ ul {
 
 .blog-section {
   margin-bottom: 4rem;
+  max-width: 832px;
+  margin-left: auto;
+  margin-right: auto;
 
   h2 {
     font-size: 2rem;
@@ -474,7 +488,9 @@ ul {
 
 .post-list {
   list-style: none;
-  margin-left: 0;
+  max-width: 832px;
+  margin-left: auto;
+  margin-right: auto;
 
   .post-item {
     background-color: var(--surface-color);
@@ -513,6 +529,10 @@ ul {
 }
 
 .page-content, .post-content {
+  max-width: 832px;
+  margin-left: auto;
+  margin-right: auto;
+
   h1, h2, h3, h4, h5, h6 {
     color: var(--il-blue);
     margin-top: 2rem;
