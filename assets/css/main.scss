@@ -140,7 +140,7 @@ body {
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 300;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, transform 0.3s ease;
   margin-left: 2rem;
   min-width: 70px;
   height: 38px;
@@ -149,6 +149,7 @@ body {
 
   &:hover {
     border-color: var(--accent-color);
+    transform: scale(1.1);
   }
 }
 
@@ -200,6 +201,11 @@ body {
   margin: 0 auto;
   padding: 3rem 2rem;
   flex: 1;
+
+  // Match content width to footer width
+  .page-heading {
+    max-width: 100%;
+  }
 }
 
 .page-heading {
@@ -220,6 +226,7 @@ body {
   max-width: 600px;
   margin: 0 auto;
   position: relative;
+  padding-bottom: 3rem;
 
   p {
     font-size: 1.1rem;
@@ -231,7 +238,7 @@ body {
 
   .more-btn {
     position: absolute;
-    bottom: 0;
+    bottom: -1rem;
     right: 0;
     background-color: var(--accent-color);
     color: white;
