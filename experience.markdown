@@ -8,11 +8,9 @@ permalink: /experience/
   <div class="resume-name-contact">
     <h2 class="resume-name">Rohan Thakkar</h2>
     <div class="resume-contact-info">
-      rohan@rthak.com | 224-424-3122 | Chicago, IL, 60612<br>
-      <a href="http://rthak.com">rthak.com</a> | <a href="https://linkedin.com/in/rthak">linkedin.com/in/rthak</a> | <a href="https://github.com/r-thak">github.com/r-thak</a>
+      mail@rthak.com | <a href="http://rthak.com">rthak.com</a> | <a href="https://linkedin.com/in/rthak">linkedin.com/in/rthak</a> | <a href="https://github.com/r-thak">github.com/r-thak</a>
     </div>
   </div>
-  <a href="{{ '/assets/Rohan-Thakkar-Resume.pdf' | relative_url }}" target="_blank" class="download-btn-inline">Download PDF</a>
 </div>
 
 <div class="resume-section">
