@@ -1,5 +1,5 @@
 # r-thak.github.io
 static website
 
-View at [rthak.com](http://www.rthak.com)
+View at [r-thak.github.io](https://r-thak.github.io/)
 
